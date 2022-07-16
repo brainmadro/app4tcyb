@@ -5,3 +5,11 @@ App para el consejo y obispado
 React Native
 MongoDB o PostgresDB
 Nodejs
+
+## Running Locally
+
+```sh
+$ git clone https://github.com/brainmadro/app4tcyb.git
+$ cd your directory
+$ npm install
+```
