@@ -12,4 +12,5 @@ $ git clone https://github.com/brainmadro/app4tcyb.git
 $ cd your directory
 $ git remote add origin https://github.com/brainmadro/app4tcyb.git
 $ npm install
+$ npm start
 ```
