@@ -3,10 +3,7 @@ App para el consejo y obispado
 
 ## Made With
 - React Native
-- MongoDB o PostgresDB
-- Nodejs
 - Expo
-- Figma
 
 ## Running Locally
 
