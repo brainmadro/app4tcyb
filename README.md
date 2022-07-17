@@ -1,10 +1,10 @@
 # app4tcyb (Agregar Nombre)
 App para el consejo y obispado
 
-## Made with
-React Native
-MongoDB o PostgresDB
-Nodejs
+## Made With
+- React Native
+- MongoDB o PostgresDB
+- Nodejs
 
 ## Running Locally
 
