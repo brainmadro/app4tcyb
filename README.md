@@ -5,6 +5,8 @@ App para el consejo y obispado
 - React Native
 - MongoDB o PostgresDB
 - Nodejs
+- Expo
+- Figma
 
 ## Running Locally
 
