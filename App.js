@@ -1,20 +1,53 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { View, Text } from 'react-native';
+import { Link, NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import SignUpScreen from "./src/screens/SignUpScreen";
+import HomeScreen from './src/screens/HomeScreen'
+import EditText from './src/components/atoms/EditText';
+import PasswordInput from './src/components/atoms/PasswordInput';
 
-export default function App() {
+function Form(props) {
+	return (
+		<View>{props.children}</View>
+	)
+}
+
+function onChangeText() {
+		console.log("Cambio")
+}
+
+function LogInScreen({navigation}) {
+    return (
+      <View>
+        <Form>  
+          <EditText 
+            onChangeText={onChangeText}
+            placeholder="Correo"
+          />
+          <PasswordInput
+            onChangeText={onChangeText}
+            placeholder="Contraseña"
+            secureTextEntry={true}
+          />
+        </Form>
+        <Link to={{ screen: 'Home', params: { id: 'jane' } }}>¿No tienes cuenta aún?</Link>
+      </View>
+    );
+}
+
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} options={{ title: 'Registrarse' }}/>
+        <Stack.Screen name="LogIn" component={LogInScreen} options={{ title: 'Iniciar Sesión' }}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
