@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, Button, Platform } from 'react-native';
 import * as Calendar from 'expo-calendar';
 import { CalendarPicker } from "../../../react-native-dates-picker";
 
 export default function App() {
+
   useEffect(() => {
     (async () => {
       const { status } = await Calendar.requestCalendarPermissionsAsync();
