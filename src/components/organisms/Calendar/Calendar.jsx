@@ -19,7 +19,6 @@ export default function App() {
   return (
     <View style={styles.container}>
       <CalendarPicker />
-      {/* <Button title="Create a new calendar" onPress={createCalendar} /> */}
     </View>
   );
 }
