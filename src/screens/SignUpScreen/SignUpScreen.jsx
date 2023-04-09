@@ -1,7 +1,7 @@
 import { Link } from "@react-navigation/native";
 import React from "react";
 import { View } from "react-native";
-import EditText from "../../components/atoms/EditText";
+//import EditText from "../../components/atoms/EditText";
 import PasswordInput from "../../components/atoms/PasswordInput";
 
 
@@ -19,7 +19,7 @@ function SignUpScreen({navigation}) {
 	return (
 		<View>
 			<Form>
-				<EditText 
+				{/* <EditText 
 					onChangeText={onChangeText}
 					placeholder="Nombre"
 				/>
@@ -27,7 +27,7 @@ function SignUpScreen({navigation}) {
 				<EditText 
 					onChangeText={onChangeText}
 					placeholder="Correo"
-				/>
+				/> */}
 				<PasswordInput 
 					onChangeText={onChangeText}
 					placeholder="Contraseña"

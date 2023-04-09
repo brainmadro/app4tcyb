@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, Button, Platform, FlatList, LogBox } from 'react-native';
+import { StyleSheet, View, Text, Button, Platform, FlatList, LogBox, Pressable } from 'react-native';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 function Navigation(props) {
 	return <Button title={props.type} />
@@ -99,14 +100,19 @@ function CalendarPicker(props) {
 			<Text  onPress={() => setActiveDate(new Date(date))} style={(date == activeDate.getTime()) ? styles.calendarDaysActive : styles.calendarDays}>{`${ day }`}</Text>
 		</View>
 	);
+
+	function IconButton(props) {
+		return <Pressable onPress={props.onPress} ><FontAwesomeIcon icon={props.icon} /></Pressable>
+	}
 	
 	return (
 		<View style={styles.container}>
 			<View style={styles.calendarHeader}>
-				<Button title='back' type='back' onPress={() => { navigateBack(MONTH) }}/>
+				
+				<IconButton icon='fa-solid fa-chevron-left' onPress={() => { navigateBack(MONTH) }}/>
 				<Text style={styles.calendarHeaderTitle}>{ getCurrentMonth('spa', month) }</Text>
 				<Text style={styles.calendarHeaderTitle}>{ year }</Text>
-				<Button title='next' type='next' onPress={() => { navigateForward(MONTH) }}/>	
+				<IconButton icon='fa-solid fa-chevron-right' onPress={() => { navigateForward(MONTH) }}/>
 			</View>
 			<View>
 				<View style={styles.calendarDaysContainer}>
